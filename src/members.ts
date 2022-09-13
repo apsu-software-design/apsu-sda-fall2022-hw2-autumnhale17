@@ -4,7 +4,7 @@ import { Member } from "./member";
 export class Members {
 
     private _member: Member;
-    private _membersArr: Array<Member>;
+    private _membersArr: Member[];
 
     constructor() {
 

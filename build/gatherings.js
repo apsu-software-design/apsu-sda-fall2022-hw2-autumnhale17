@@ -23,6 +23,13 @@ var Gatherings = (function () {
             }
         }
     };
+    Gatherings.prototype.findGatheringNames = function (query) {
+        for (var i = 0; i < this._gatheringArr.length; i++) {
+            if (this._gatheringArr[i].name == query) {
+                return this._gatheringArr[query];
+            }
+        }
+    };
     return Gatherings;
 }());
 exports.Gatherings = Gatherings;

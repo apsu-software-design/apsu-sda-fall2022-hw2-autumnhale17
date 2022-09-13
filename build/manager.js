@@ -34,10 +34,10 @@ var GatheringManager = (function () {
         return this.organizations.findMemberNames(query);
     };
     GatheringManager.prototype.findGatheringNames = function (query) {
-        return null;
+        return this.gatherings.findGatheringNames(query);
     };
     GatheringManager.prototype.findOrganizationNames = function (query) {
-        return null;
+        return this.organizations.findOrganizationNames(query);
     };
     return GatheringManager;
 }());

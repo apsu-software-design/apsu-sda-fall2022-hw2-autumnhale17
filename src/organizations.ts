@@ -4,7 +4,7 @@ import {Organization} from './organization'
 export class Organizations {
 
     private _organization: Organization;
-    private _organizationArr: Array<Organization>;
+    private _organizationArr: Organization[];
 
     constructor() {
 
@@ -30,6 +30,14 @@ export class Organizations {
         for (let i = 0; i < this._organizationArr.length; i++) {
             if (this._organizationArr[i].name == organizationTitle) {
                 return this._organizationArr[i].addGatheringToOrg(gatheringTitle);
+            }
+        }
+    }
+
+    public findOrganizationNames(query: string) : string[] {
+        for (let i = 0; i < this._organizationArr.length; i++) {
+            if (this._organizationArr[i].name == query) {
+                return this._organizationArr[query];
             }
         }
     }

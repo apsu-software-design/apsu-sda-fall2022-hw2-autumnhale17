@@ -8,7 +8,7 @@ export class Organization {
 
     private _name : string;
     private _membersArrOrganization: string[];
-    private _gatheringsArr: Array<string>;
+    private _gatheringsArr: string[];
 
 
     constructor(title: string) {

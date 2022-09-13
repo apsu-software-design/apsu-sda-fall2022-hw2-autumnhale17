@@ -23,6 +23,13 @@ var Organizations = (function () {
             }
         }
     };
+    Organizations.prototype.findOrganizationNames = function (query) {
+        for (var i = 0; i < this._organizationArr.length; i++) {
+            if (this._organizationArr[i].name == query) {
+                return this._organizationArr[query];
+            }
+        }
+    };
     return Organizations;
 }());
 exports.Organizations = Organizations;

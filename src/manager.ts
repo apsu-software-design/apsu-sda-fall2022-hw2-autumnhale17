@@ -51,10 +51,10 @@ export class GatheringManager {
     }
 
     findGatheringNames(query: string): string[] {
-        return null;
+        return this.gatherings.findGatheringNames(query);
     }
 
     findOrganizationNames(query: string): string[] {
-        return null;
+        return this.organizations.findOrganizationNames(query);
     }
 }
