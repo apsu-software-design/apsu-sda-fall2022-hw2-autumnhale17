@@ -5,8 +5,15 @@ var Organization = (function () {
     function Organization(title) {
         this._name = title;
     }
-    Organization.prototype.getName = function () {
-        return this._name;
+    Object.defineProperty(Organization.prototype, "name", {
+        get: function () {
+            return this._name;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Organization.prototype.addGatheringToOrg = function (gatheringTitle) {
+        this._gatheringsArr.push(gatheringTitle);
     };
     return Organization;
 }());

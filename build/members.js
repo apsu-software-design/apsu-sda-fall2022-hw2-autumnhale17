@@ -12,8 +12,8 @@ var Members = (function () {
     Members.prototype.getAllMembers = function () {
         for (var _i = 0, _a = this._membersArr; _i < _a.length; _i++) {
             this._member = _a[_i];
-            console.log("Name: " + this._member.getFullName + " " +
-                "Email Address: " + this._member.getEmailAddress);
+            console.log("Name: " + this._member.name + " " +
+                "Email Address: " + this._member.emailAddress);
         }
     };
     return Members;

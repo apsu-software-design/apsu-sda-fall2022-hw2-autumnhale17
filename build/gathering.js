@@ -7,15 +7,34 @@ var Gathering = (function () {
         this._location = location;
         this._time = date;
     }
-    Gathering.prototype.getLocation = function () {
-        return this._location;
-    };
-    Gathering.prototype.getName = function () {
-        return this._name;
-    };
-    Gathering.prototype.getTime = function () {
-        return this._time;
-    };
+    Object.defineProperty(Gathering.prototype, "location", {
+        get: function () {
+            return this._location;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Gathering.prototype, "name", {
+        get: function () {
+            return this._name;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Gathering.prototype, "time", {
+        get: function () {
+            return this._time;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Gathering.prototype, "membersArrGathering", {
+        get: function () {
+            return this._membersArrGathering;
+        },
+        enumerable: false,
+        configurable: true
+    });
     Gathering.prototype.addMemberToArr = function (name) {
         this._membersArrGathering.push(name);
     };

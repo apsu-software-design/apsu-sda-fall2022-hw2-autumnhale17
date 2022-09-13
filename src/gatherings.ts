@@ -22,12 +22,18 @@ export class Gatherings {
 
     public addMemberToGathering(name: string, gatheringTitle: string) {
         for (let i = 0; i < this._gatheringArr.length; i++) {
-            if (this._gatheringArr[i].getName.toString() == gatheringTitle) {
+            if (this._gatheringArr[i].name == gatheringTitle) {
                 this._gatheringArr[i].addMemberToArr(name);
             }
         }
+    }
 
-
+    public getMembers(gatheringTitle: string): string[] {
+        for (let i = 0; i < this._gatheringArr.length; i++) {
+            if (this._gatheringArr[i].name == gatheringTitle) {
+                return this._gathering.membersArrGathering;
+            }
+        }
     }
 
 }

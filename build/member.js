@@ -6,12 +6,20 @@ var Member = (function () {
         this._name = name;
         this._emailAddress = email;
     }
-    Member.prototype.getEmailAddress = function () {
-        return this._emailAddress;
-    };
-    Member.prototype.getFullName = function () {
-        return this._name;
-    };
+    Object.defineProperty(Member.prototype, "emailAddress", {
+        get: function () {
+            return this._emailAddress;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Member.prototype, "name", {
+        get: function () {
+            return this._name;
+        },
+        enumerable: false,
+        configurable: true
+    });
     return Member;
 }());
 exports.Member = Member;

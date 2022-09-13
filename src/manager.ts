@@ -35,13 +35,15 @@ export class GatheringManager {
     }
 
     addGatheringToOrganization(gatheringTitle: string, organizationTitle: string) {
+        this.organizations.addGatheringToOrganization(gatheringTitle, organizationTitle);
     }
 
     modifyGathering(title: string, newTitle: string, newDate?: string) {
+        
     }
 
     getMembers(gatheringTitle: string): string[] {
-        return null;
+        return this.gatherings.getMembers(gatheringTitle);
     }
 
     findMemberNames(query: string): string[] {

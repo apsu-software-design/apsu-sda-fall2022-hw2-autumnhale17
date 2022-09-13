@@ -23,11 +23,12 @@ var GatheringManager = (function () {
         this.gatherings.addMemberToGathering(name, gatheringTitle);
     };
     GatheringManager.prototype.addGatheringToOrganization = function (gatheringTitle, organizationTitle) {
+        this.organizations.addGatheringToOrganization(gatheringTitle, organizationTitle);
     };
     GatheringManager.prototype.modifyGathering = function (title, newTitle, newDate) {
     };
     GatheringManager.prototype.getMembers = function (gatheringTitle) {
-        return null;
+        return this.gatherings.getMembers(gatheringTitle);
     };
     GatheringManager.prototype.findMemberNames = function (query) {
         return this.organizations.findMemberNames(query);

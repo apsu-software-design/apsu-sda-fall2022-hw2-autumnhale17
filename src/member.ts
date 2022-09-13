@@ -13,11 +13,11 @@ export class Member {
         this._emailAddress = email;
     }
 
-    public getEmailAddress() {
+    public get emailAddress() {
         return this._emailAddress;
     }
 
-    public getFullName() {
+    public get name() {
         return this._name;
     }
 }

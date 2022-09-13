@@ -20,8 +20,8 @@ export class Members {
 
     public getAllMembers() {
         for (this._member of this._membersArr) {
-            console.log("Name: " + this._member.getFullName + " " +
-                "Email Address: " + this._member.getEmailAddress);
+            console.log("Name: " + this._member.name + " " +
+                "Email Address: " + this._member.emailAddress);
         }
     }
 

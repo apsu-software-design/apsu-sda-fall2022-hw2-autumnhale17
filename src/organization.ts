@@ -7,15 +7,20 @@ import {Organizations} from './organizations';
 export class Organization {
 
     private _name : string;
-    private _membersArrOrganization: Array<String>;
+    private _membersArrOrganization: string[];
+    private _gatheringsArr: Array<string>;
 
 
     constructor(title: string) {
         this._name = title;
     }
 
-    public getName() {
+    public get name() {
         return this._name;
+    }
+
+    public addGatheringToOrg(gatheringTitle: string) {
+        this._gatheringsArr.push(gatheringTitle);
     }
 
 

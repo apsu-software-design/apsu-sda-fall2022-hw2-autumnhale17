@@ -11,9 +11,15 @@ var Organizations = (function () {
     };
     Organizations.prototype.findMemberNames = function (query) {
         for (var i = 0; i < this._organizationArr.length; i++) {
-            if (this._organization[i] == query) {
+            if (this._organizationArr[i].name == query) {
                 return this._organization[query];
-                ;
+            }
+        }
+    };
+    Organizations.prototype.addGatheringToOrganization = function (gatheringTitle, organizationTitle) {
+        for (var i = 0; i < this._organizationArr.length; i++) {
+            if (this._organizationArr[i].name == organizationTitle) {
+                return this._organizationArr[i].addGatheringToOrg(gatheringTitle);
             }
         }
     };

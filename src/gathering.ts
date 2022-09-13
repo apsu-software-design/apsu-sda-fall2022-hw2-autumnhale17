@@ -10,7 +10,7 @@ export class Gathering {
     private _location: string;
     private _name: string;
     private _time: string;
-    private _membersArrGathering: Array<string>;
+    private _membersArrGathering: string[];
 
     constructor(title: string, location: string, date: string) {
         this._name = title;
@@ -18,16 +18,20 @@ export class Gathering {
         this._time = date;
     }
 
-    public getLocation() {
+    public get location() {
         return this._location;
     }
 
-    public getName() {
+    public get name() {
         return this._name;
     }
 
-    public getTime() {
+    public get time() {
         return this._time;
+    }
+
+    public get membersArrGathering() {
+        return this._membersArrGathering;
     }
 
     public addMemberToArr(name: string) {

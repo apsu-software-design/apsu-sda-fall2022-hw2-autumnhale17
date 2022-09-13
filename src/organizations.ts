@@ -18,10 +18,18 @@ export class Organizations {
         this._organizationArr.push(this._organization);
     }
 
-    findMemberNames(query: string) : string[] {
+    public findMemberNames(query: string) : string[] {
         for (let i = 0; i < this._organizationArr.length; i++) {
-            if (this._organization[i] == query) {
-                return this._organization[query];;
+            if (this._organizationArr[i].name == query) {
+                return this._organization[query];
+            }
+        }
+    }
+
+    public addGatheringToOrganization(gatheringTitle: string, organizationTitle: string) {
+        for (let i = 0; i < this._organizationArr.length; i++) {
+            if (this._organizationArr[i].name == organizationTitle) {
+                return this._organizationArr[i].addGatheringToOrg(gatheringTitle);
             }
         }
     }

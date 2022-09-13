@@ -11,8 +11,15 @@ var Gatherings = (function () {
     };
     Gatherings.prototype.addMemberToGathering = function (name, gatheringTitle) {
         for (var i = 0; i < this._gatheringArr.length; i++) {
-            if (this._gatheringArr[i].getName.toString() == gatheringTitle) {
+            if (this._gatheringArr[i].name == gatheringTitle) {
                 this._gatheringArr[i].addMemberToArr(name);
+            }
+        }
+    };
+    Gatherings.prototype.getMembers = function (gatheringTitle) {
+        for (var i = 0; i < this._gatheringArr.length; i++) {
+            if (this._gatheringArr[i].name == gatheringTitle) {
+                return this._gathering.membersArrGathering;
             }
         }
     };
