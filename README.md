@@ -5,7 +5,7 @@ This repo contains code for a command-line application to manage events (called 
 The below questions should be answered _in detail_ regarding your submission!
 
 ##### Reflect on how you determined the architecture of your application. What process did you use to determine which classes to define? #####
-> Answer goes here! (after the >, replacing this text)
+> //
 
 
 ##### Did you receive help from any other sources (classmates, etc)? If so, please list who (be specific!). #####
