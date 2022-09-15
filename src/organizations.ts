@@ -5,6 +5,7 @@ export class Organizations {
 
     private _organization: Organization;
     private _organizationArr: Organization[];
+    private _memberNames: string[] = [];
 
     constructor() {
 
@@ -18,18 +19,10 @@ export class Organizations {
         this._organizationArr.push(this._organization);
     }
 
-    public findMemberNames(query: string) : string[] {
-        for (let i = 0; i < this._organizationArr.length; i++) {
-            if (this._organizationArr[i].name == query) {
-                return this._organization[query];
-            }
-        }
-    }
-
     public addGatheringToOrganization(gatheringTitle: string, organizationTitle: string) {
         for (let i = 0; i < this._organizationArr.length; i++) {
             if (this._organizationArr[i].name == organizationTitle) {
-                return this._organizationArr[i].addGatheringToOrg(gatheringTitle);
+                this._organizationArr[i].addGatheringToOrg(gatheringTitle);
             }
         }
     }

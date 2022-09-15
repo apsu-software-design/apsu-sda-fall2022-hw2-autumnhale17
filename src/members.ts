@@ -5,6 +5,7 @@ export class Members {
 
     private _member: Member;
     private _membersArr: Member[];
+    private _memberNames: string[] = [];
 
     constructor() {
 
@@ -18,13 +19,12 @@ export class Members {
         this._membersArr.push(this._member);
     }
 
-    public getAllMembers() {
-        for (this._member of this._membersArr) {
-            console.log("Name: " + this._member.name + " " +
-                "Email Address: " + this._member.emailAddress);
+    public findMemberNames(query: string) : string[] {
+        for (let i = 0; i < this._membersArr.length; i++) {
+            if (this._membersArr[i].name == query) {
+                this._memberNames.push(this._membersArr[i].name);
+            }
         }
+        return this._memberNames;
     }
-
-
-
 }

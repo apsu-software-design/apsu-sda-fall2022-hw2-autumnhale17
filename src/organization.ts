@@ -7,9 +7,7 @@ import {Organizations} from './organizations';
 export class Organization {
 
     private _name : string;
-    private _membersArrOrganization: string[];
     private _gatheringsArr: string[];
-
 
     constructor(title: string) {
         this._name = title;
@@ -22,9 +20,5 @@ export class Organization {
     public addGatheringToOrg(gatheringTitle: string) {
         this._gatheringsArr.push(gatheringTitle);
     }
-
-
-
-
  
 }

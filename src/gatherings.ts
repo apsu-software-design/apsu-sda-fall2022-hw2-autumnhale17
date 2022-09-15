@@ -7,6 +7,8 @@ export class Gatherings {
     private _gathering: Gathering;
     private _gatheringArr: Gathering[];
     private _organization: Organization;
+    private _memberList: string[] = [];
+    private _gatheringListNames: string[] = [];
 
     constructor() {
 
@@ -31,17 +33,19 @@ export class Gatherings {
     public getMembers(gatheringTitle: string): string[] {
         for (let i = 0; i < this._gatheringArr.length; i++) {
             if (this._gatheringArr[i].name == gatheringTitle) {
-                return this._gathering.membersArrGathering;
+                this._memberList.push(this._gatheringArr[i].name);
             }
         }
+        return this._memberList;
     }
 
     public findGatheringNames(query: string) : string[] {
         for (let i = 0; i < this._gatheringArr.length; i++) {
             if (this._gatheringArr[i].name == query) {
-                return this._gatheringArr[query];
+                this._gatheringListNames.push(this._gatheringArr[i].name);
             }
         }
+        return this._gatheringListNames;
     }
 
 }
