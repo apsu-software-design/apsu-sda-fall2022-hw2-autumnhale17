@@ -1,10 +1,3 @@
-
-import { GatheringManager } from './manager';
-import { Members } from './members';
-import { Member } from './member';
-import { Organizations } from './organizations';
-import { Organization } from './organization';
-
 export class Gathering {
 
     private _location: string;
@@ -37,9 +30,4 @@ export class Gathering {
     public addMemberToArr(name: string) {
         this._membersArrGathering.push(name);
     }
-
-    
-
-    
-
 }

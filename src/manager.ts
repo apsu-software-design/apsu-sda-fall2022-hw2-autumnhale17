@@ -41,7 +41,7 @@ export class GatheringManager {
     }
 
     modifyGathering(title: string, newTitle: string, newDate?: string) {
-        
+
     }
 
     getMembers(gatheringTitle: string): string[] {

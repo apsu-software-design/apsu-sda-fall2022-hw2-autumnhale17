@@ -1,13 +1,7 @@
-
-import {GatheringManager} from './manager';
-import {Members} from './members';
-import {Member} from './member';
-import {Organizations} from './organizations';
-
 export class Organization {
 
-    private _name : string;
-    private _gatheringsArr: string[];
+    private _name: string;
+    private _gatheringsArr: string[] = [];
 
     constructor(title: string) {
         this._name = title;
@@ -17,8 +11,12 @@ export class Organization {
         return this._name;
     }
 
+    public get gatheringArr() {
+        return this._gatheringsArr;
+    }
+
     public addGatheringToOrg(gatheringTitle: string) {
         this._gatheringsArr.push(gatheringTitle);
     }
- 
+
 }

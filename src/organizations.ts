@@ -1,38 +1,37 @@
-
-import {Organization} from './organization'
+import { Organization } from './organization'
 
 export class Organizations {
 
-    private _organization: Organization;
-    private _organizationArr: Organization[] = [];
-    private _organizationNames: string[] = [];
+    private _organizationArr: Organization[];;
 
     constructor() {
-
+        this._organizationArr = [];
     }
 
     public addOrganization(title: string) {
         // Creating a new organization
-        this._organization = new Organization(title);
+        let organization = new Organization(title);
 
         // Adding the organization to the organization array
-        this._organizationArr.push(this._organization);
+        this._organizationArr.push(organization);
     }
 
     public addGatheringToOrganization(gatheringTitle: string, organizationTitle: string) {
         for (let i = 0; i < this._organizationArr.length; i++) {
-            if (this._organizationArr[i].name == organizationTitle) {
+            if (this._organizationArr[i].name.includes(organizationTitle)) {
                 this._organizationArr[i].addGatheringToOrg(gatheringTitle);
             }
         }
     }
 
-    public findOrganizationNames(query: string) : string[] {
+    public findOrganizationNames(query: string): string[] {
+        let organizationNames: string[] = [];
         for (let i = 0; i < this._organizationArr.length; i++) {
-            if (this._organizationArr[i].name == query) {
-                this._organizationNames.push(this._organizationArr[i].name);
+            if (this._organizationArr[i].name.includes(query)) {
+                organizationNames.push(this._organizationArr[i].name);
+                //console.log("Org. pushed: " + this._organizationArr[i].name);
             }
         }
-        return this._organizationNames;
+        return organizationNames;
     }
 }

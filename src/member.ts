@@ -1,8 +1,3 @@
-
-import { GatheringManager } from './manager';
-import { Gatherings } from './gatherings';
-import { Organizations } from './organizations';
-
 export class Member {
 
     private _name: string;
