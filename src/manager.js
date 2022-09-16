@@ -14,9 +14,9 @@ var GatheringManager = /** @class */ (function () {
         this.organizations = new organizations_1.Organizations();
     }
     GatheringManager.prototype.addMember = function (name, email) {
-        console.log("Adding member... calling function...");
+        // console.log("Adding member... calling function...");
         this.members.addMember(name, email);
-        console.log("Member added...");
+        // console.log("Member added...");
     };
     GatheringManager.prototype.addGathering = function (title, location, date) {
         this.gatherings.addGathering(title, location, date);
@@ -31,6 +31,7 @@ var GatheringManager = /** @class */ (function () {
         this.organizations.addGatheringToOrganization(gatheringTitle, organizationTitle);
     };
     GatheringManager.prototype.modifyGathering = function (title, newTitle, newDate) {
+        this.gatherings.modifyGathering(title, newTitle, newDate);
     };
     GatheringManager.prototype.getMembers = function (gatheringTitle) {
         return this.gatherings.getMembers(gatheringTitle);

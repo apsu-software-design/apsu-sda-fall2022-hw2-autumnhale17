@@ -19,6 +19,14 @@ export class Gathering {
         return this._name;
     }
 
+    public changeName(newName: string) {
+        this._name = newName;
+    }
+
+    public changeTime(newTime: string) {
+        this._time = newTime;
+    }
+
     public get time() {
         return this._time;
     }

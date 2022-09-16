@@ -19,9 +19,9 @@ export class GatheringManager {
     }
 
     addMember(name: string, email: string) {
-        console.log("Adding member... calling function...");
+        // console.log("Adding member... calling function...");
         this.members.addMember(name, email);
-        console.log("Member added...");
+        // console.log("Member added...");
     }
 
     addGathering(title: string, location: string, date: string) {
@@ -41,7 +41,7 @@ export class GatheringManager {
     }
 
     modifyGathering(title: string, newTitle: string, newDate?: string) {
-
+        this.gatherings.modifyGathering(title, newTitle, newDate)
     }
 
     getMembers(gatheringTitle: string): string[] {

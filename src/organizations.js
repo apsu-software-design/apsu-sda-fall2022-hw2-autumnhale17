@@ -25,7 +25,7 @@ var Organizations = /** @class */ (function () {
         for (var i = 0; i < this._organizationArr.length; i++) {
             if (this._organizationArr[i].name.includes(query)) {
                 organizationNames.push(this._organizationArr[i].name);
-                console.log("Org. pushed: " + this._organizationArr[i].name);
+                //console.log("Org. pushed: " + this._organizationArr[i].name);
             }
         }
         return organizationNames;

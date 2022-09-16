@@ -35,6 +35,16 @@ var Gatherings = /** @class */ (function () {
         }
         return gatheringListNames;
     };
+    Gatherings.prototype.modifyGathering = function (title, newTitle, newDate) {
+        for (var i = 0; i < this._gatheringArr.length; i++) {
+            if (this._gatheringArr[i].name == title) {
+                this._gatheringArr[i].changeName(newTitle);
+                if (newDate) {
+                    this._gatheringArr[i].changeTime(newDate);
+                }
+            }
+        }
+    };
     return Gatherings;
 }());
 exports.Gatherings = Gatherings;

@@ -43,4 +43,15 @@ export class Gatherings {
         return gatheringListNames;
     }
 
+    modifyGathering(title: string, newTitle: string, newDate?: string) {
+        for (let i = 0; i < this._gatheringArr.length; i++) {
+            if (this._gatheringArr[i].name == title) {
+                this._gatheringArr[i].changeName(newTitle);
+                if (newDate) {
+                    this._gatheringArr[i].changeTime(newDate);
+                }
+            }
+        }
+    }
+
 }

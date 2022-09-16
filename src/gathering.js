@@ -22,6 +22,12 @@ var Gathering = /** @class */ (function () {
         enumerable: false,
         configurable: true
     });
+    Gathering.prototype.changeName = function (newName) {
+        this._name = newName;
+    };
+    Gathering.prototype.changeTime = function (newTime) {
+        this._time = newTime;
+    };
     Object.defineProperty(Gathering.prototype, "time", {
         get: function () {
             return this._time;
