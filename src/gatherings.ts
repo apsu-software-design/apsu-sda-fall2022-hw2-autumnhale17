@@ -25,14 +25,15 @@ export class Gatherings {
     public addMemberToGathering(name: string, gatheringTitle: string) {
         for (let i = 0; i < this._gatheringArr.length; i++) {
             if (this._gatheringArr[i].name == gatheringTitle) {
-                this._gatheringArr[i].addMemberToArr(name);
+                this._gatheringArr[i].membersArrGathering.push();
             }
         }
     }
 
     public getMembers(gatheringTitle: string): string[] {
         for (let i = 0; i < this._gatheringArr.length; i++) {
-            if (this._gatheringArr[i].name == gatheringTitle) {
+            if (this._gatheringArr[i].name == gatheringTitle) {8
+                
                 this._memberList.push(this._gatheringArr[i].name);
             }
         }

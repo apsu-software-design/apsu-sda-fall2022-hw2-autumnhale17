@@ -17,7 +17,7 @@ var Gatherings = /** @class */ (function () {
     Gatherings.prototype.addMemberToGathering = function (name, gatheringTitle) {
         for (var i = 0; i < this._gatheringArr.length; i++) {
             if (this._gatheringArr[i].name == gatheringTitle) {
-                this._gatheringArr[i].addMemberToArr(name);
+                this._gatheringArr[i].membersArrGathering.push();
             }
         }
     };
