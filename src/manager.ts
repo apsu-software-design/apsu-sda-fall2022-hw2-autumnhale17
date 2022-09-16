@@ -47,7 +47,7 @@ export class GatheringManager {
     }
 
     findMemberNames(query: string): string[] {
-        return this.organizations.findMemberNames(query);
+        return this.members.findMemberNames(query);
     }
 
     findGatheringNames(query: string): string[] {
