@@ -4,31 +4,27 @@ exports.Organizations = void 0;
 var organization_1 = require("./organization");
 var Organizations = (function () {
     function Organizations() {
+        this._organizationArr = [];
+        this._organizationNames = [];
     }
     Organizations.prototype.addOrganization = function (title) {
         this._organization = new organization_1.Organization(title);
         this._organizationArr.push(this._organization);
     };
-    Organizations.prototype.findMemberNames = function (query) {
-        for (var i = 0; i < this._organizationArr.length; i++) {
-            if (this._organizationArr[i].name == query) {
-                return this._organization[query];
-            }
-        }
-    };
     Organizations.prototype.addGatheringToOrganization = function (gatheringTitle, organizationTitle) {
         for (var i = 0; i < this._organizationArr.length; i++) {
             if (this._organizationArr[i].name == organizationTitle) {
-                return this._organizationArr[i].addGatheringToOrg(gatheringTitle);
+                this._organizationArr[i].addGatheringToOrg(gatheringTitle);
             }
         }
     };
     Organizations.prototype.findOrganizationNames = function (query) {
         for (var i = 0; i < this._organizationArr.length; i++) {
             if (this._organizationArr[i].name == query) {
-                return this._organizationArr[query];
+                this._organizationNames.push(this._organizationArr[i].name);
             }
         }
+        return this._organizationNames;
     };
     return Organizations;
 }());

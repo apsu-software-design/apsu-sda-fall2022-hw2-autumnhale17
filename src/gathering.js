@@ -1,9 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Gathering = void 0;
-var Gathering = (function () {
+var Gathering = /** @class */ (function () {
     function Gathering(title, location, date) {
-        this._membersArrGathering = [];
         this._name = title;
         this._location = location;
         this._time = date;
@@ -42,4 +41,3 @@ var Gathering = (function () {
     return Gathering;
 }());
 exports.Gathering = Gathering;
-//# sourceMappingURL=gathering.js.map

@@ -2,7 +2,7 @@
 //User Interface for The Gathering Manager
 //Code adapted from Joel Ross at the University of Wisconsin
 //@author James Church
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.start = void 0;
 var readlineSync = require("readline-sync"); //for easier repeated prompts
 var manager_1 = require("./manager");

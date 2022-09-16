@@ -19,7 +19,9 @@ export class GatheringManager {
     }
 
     addMember(name: string, email: string) {
+        console.log("Adding member... calling function...");
         this.members.addMember(name, email);
+        console.log("Member added...");
     }
 
     addGathering(title: string, location: string, date: string) {

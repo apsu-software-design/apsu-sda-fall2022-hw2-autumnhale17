@@ -4,17 +4,24 @@ exports.Members = void 0;
 var member_1 = require("./member");
 var Members = (function () {
     function Members() {
+        this._membersArr = [];
     }
     Members.prototype.addMember = function (name, email) {
-        this._member = new member_1.Member(name, email);
-        this._membersArr.push(this._member);
+        var member = new member_1.Member(name, email);
+        console.log("Member Array Length Before:" + this._membersArr.length);
+        this._membersArr.push(member);
+        console.log("Member Array Length After:" + this._membersArr.length);
     };
-    Members.prototype.getAllMembers = function () {
-        for (var _i = 0, _a = this._membersArr; _i < _a.length; _i++) {
-            this._member = _a[_i];
-            console.log("Name: " + this._member.name + " " +
-                "Email Address: " + this._member.emailAddress);
+    Members.prototype.findMemberNames = function (query) {
+        var memberNames = [];
+        console.log("Find member names length before:" + memberNames.length);
+        for (var i = 0; i < this._membersArr.length; i++) {
+            if (this._membersArr[i].name.includes(query)) {
+                memberNames.push(this._membersArr[i].name);
+            }
         }
+        console.log("Find member names length upon return:" + memberNames.length);
+        return memberNames;
     };
     return Members;
 }());

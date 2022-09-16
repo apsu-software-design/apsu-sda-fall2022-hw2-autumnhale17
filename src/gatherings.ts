@@ -5,7 +5,7 @@ import { Gathering } from './gathering'
 export class Gatherings {
 
     private _gathering: Gathering;
-    private _gatheringArr: Gathering[];
+    private _gatheringArr: Gathering[] = [];
     private _organization: Organization;
     private _memberList: string[] = [];
     private _gatheringListNames: string[] = [];

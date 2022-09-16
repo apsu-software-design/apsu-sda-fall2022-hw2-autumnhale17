@@ -11,7 +11,9 @@ var GatheringManager = (function () {
         this.organizations = new organizations_1.Organizations();
     }
     GatheringManager.prototype.addMember = function (name, email) {
+        console.log("Adding member... calling function...");
         this.members.addMember(name, email);
+        console.log("Member added...");
     };
     GatheringManager.prototype.addGathering = function (title, location, date) {
         this.gatherings.addGathering(title, location, date);
@@ -31,7 +33,7 @@ var GatheringManager = (function () {
         return this.gatherings.getMembers(gatheringTitle);
     };
     GatheringManager.prototype.findMemberNames = function (query) {
-        return this.organizations.findMemberNames(query);
+        return this.members.findMemberNames(query);
     };
     GatheringManager.prototype.findGatheringNames = function (query) {
         return this.gatherings.findGatheringNames(query);

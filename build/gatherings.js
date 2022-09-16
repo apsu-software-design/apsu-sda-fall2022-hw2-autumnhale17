@@ -4,6 +4,9 @@ exports.Gatherings = void 0;
 var gathering_1 = require("./gathering");
 var Gatherings = (function () {
     function Gatherings() {
+        this._gatheringArr = [];
+        this._memberList = [];
+        this._gatheringListNames = [];
     }
     Gatherings.prototype.addGathering = function (title, location, date) {
         this._gathering = new gathering_1.Gathering(title, location, date);
@@ -19,16 +22,18 @@ var Gatherings = (function () {
     Gatherings.prototype.getMembers = function (gatheringTitle) {
         for (var i = 0; i < this._gatheringArr.length; i++) {
             if (this._gatheringArr[i].name == gatheringTitle) {
-                return this._gathering.membersArrGathering;
+                this._memberList.push(this._gatheringArr[i].name);
             }
         }
+        return this._memberList;
     };
     Gatherings.prototype.findGatheringNames = function (query) {
         for (var i = 0; i < this._gatheringArr.length; i++) {
             if (this._gatheringArr[i].name == query) {
-                return this._gatheringArr[query];
+                this._gatheringListNames.push(this._gatheringArr[i].name);
             }
         }
+        return this._gatheringListNames;
     };
     return Gatherings;
 }());

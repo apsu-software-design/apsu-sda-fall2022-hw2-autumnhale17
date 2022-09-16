@@ -10,7 +10,7 @@ export class Gathering {
     private _location: string;
     private _name: string;
     private _time: string;
-    private _membersArrGathering: string[];
+    private _membersArrGathering: string[] = [];
 
     constructor(title: string, location: string, date: string) {
         this._name = title;

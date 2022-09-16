@@ -4,7 +4,7 @@ import {Organization} from './organization'
 export class Organizations {
 
     private _organization: Organization;
-    private _organizationArr: Organization[];
+    private _organizationArr: Organization[] = [];
     private _organizationNames: string[] = [];
 
     constructor() {
@@ -35,14 +35,4 @@ export class Organizations {
         }
         return this._organizationNames;
     }
-
-    /*this._gatheringListNames.push(this._gatheringArr[i].name);
-            }
-        }
-        return this._gatheringListNames;
-    }
-*/
-
-    
- 
 }

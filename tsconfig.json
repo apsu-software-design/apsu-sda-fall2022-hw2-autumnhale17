@@ -5,7 +5,9 @@
         "sourceMap": true,
         "outDir": "build/",
         "removeComments": true,
-        "alwaysStrict": true
+        "alwaysStrict": true,
+        // Added this below
+        "rootDir": "src"
     },
     "include": [
         "src/**/*"
