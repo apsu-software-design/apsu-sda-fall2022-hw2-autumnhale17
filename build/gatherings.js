@@ -5,35 +5,43 @@ var gathering_1 = require("./gathering");
 var Gatherings = (function () {
     function Gatherings() {
         this._gatheringArr = [];
-        this._memberList = [];
-        this._gatheringListNames = [];
     }
     Gatherings.prototype.addGathering = function (title, location, date) {
-        this._gathering = new gathering_1.Gathering(title, location, date);
-        this._gatheringArr.push(this._gathering);
+        var gathering = new gathering_1.Gathering(title, location, date);
+        this._gatheringArr.push(gathering);
     };
     Gatherings.prototype.addMemberToGathering = function (name, gatheringTitle) {
         for (var i = 0; i < this._gatheringArr.length; i++) {
-            if (this._gatheringArr[i].name == gatheringTitle) {
-                this._gatheringArr[i].membersArrGathering.push();
+            if (this._gatheringArr[i].name.includes(gatheringTitle)) {
+                this._gatheringArr[i].membersArrGathering.push(name);
             }
         }
     };
     Gatherings.prototype.getMembers = function (gatheringTitle) {
         for (var i = 0; i < this._gatheringArr.length; i++) {
-            if (this._gatheringArr[i].name == gatheringTitle) {
-                this._memberList.push(this._gatheringArr[i].name);
+            if (this._gatheringArr[i].name.includes(gatheringTitle)) {
+                return this._gatheringArr[i].membersArrGathering;
             }
         }
-        return this._memberList;
     };
     Gatherings.prototype.findGatheringNames = function (query) {
+        var gatheringListNames = [];
         for (var i = 0; i < this._gatheringArr.length; i++) {
-            if (this._gatheringArr[i].name == query) {
-                this._gatheringListNames.push(this._gatheringArr[i].name);
+            if (this._gatheringArr[i].name.includes(query)) {
+                gatheringListNames.push(this._gatheringArr[i].name);
             }
         }
-        return this._gatheringListNames;
+        return gatheringListNames;
+    };
+    Gatherings.prototype.modifyGathering = function (title, newTitle, newDate) {
+        for (var i = 0; i < this._gatheringArr.length; i++) {
+            if (this._gatheringArr[i].name == title) {
+                this._gatheringArr[i].changeName(newTitle);
+                if (newDate) {
+                    this._gatheringArr[i].changeTime(newDate);
+                }
+            }
+        }
     };
     return Gatherings;
 }());

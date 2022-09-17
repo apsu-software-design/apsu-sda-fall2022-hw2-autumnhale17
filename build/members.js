@@ -8,19 +8,15 @@ var Members = (function () {
     }
     Members.prototype.addMember = function (name, email) {
         var member = new member_1.Member(name, email);
-        console.log("Member Array Length Before:" + this._membersArr.length);
         this._membersArr.push(member);
-        console.log("Member Array Length After:" + this._membersArr.length);
     };
     Members.prototype.findMemberNames = function (query) {
         var memberNames = [];
-        console.log("Find member names length before:" + memberNames.length);
         for (var i = 0; i < this._membersArr.length; i++) {
             if (this._membersArr[i].name.includes(query)) {
                 memberNames.push(this._membersArr[i].name);
             }
         }
-        console.log("Find member names length upon return:" + memberNames.length);
         return memberNames;
     };
     return Members;

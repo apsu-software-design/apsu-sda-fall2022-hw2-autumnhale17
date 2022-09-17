@@ -223,8 +223,11 @@ function showListGatheringMembersMenu(em:GatheringManager) {
 
   let members = em.getMembers(gatheringName);
 
+  // added a little check so nothing is thrown if members is not defined
+  if (members != undefined) {
   console.log('Members participating in this action:')
   console.log('  '+members.join('\n  ')+'\n');
+  }
 
   readlineSync.keyInPause('(Press any letter to continue)', {guide:false}); //so have time to read stuff
 }

@@ -161,8 +161,10 @@ function showAddToOrganizationMenu(em, organizationName, gatheringName) {
 function showListGatheringMembersMenu(em) {
     var gatheringName = showSearchGatheringsMenu(em);
     var members = em.getMembers(gatheringName);
-    console.log('Members participating in this action:');
-    console.log('  ' + members.join('\n  ') + '\n');
+    if (members != undefined) {
+        console.log('Members participating in this action:');
+        console.log('  ' + members.join('\n  ') + '\n');
+    }
     readlineSync.keyInPause('(Press any letter to continue)', { guide: false });
 }
 //# sourceMappingURL=ui.js.map

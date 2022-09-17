@@ -209,7 +209,10 @@ function showAddToOrganizationMenu(em, organizationName, gatheringName) {
 function showListGatheringMembersMenu(em) {
     var gatheringName = showSearchGatheringsMenu(em);
     var members = em.getMembers(gatheringName);
-    console.log('Members participating in this action:');
-    console.log('  ' + members.join('\n  ') + '\n');
+    // added a little check so nothing is thrown if members is not defined
+    if (members != undefined) {
+        console.log('Members participating in this action:');
+        console.log('  ' + members.join('\n  ') + '\n');
+    }
     readlineSync.keyInPause('(Press any letter to continue)', { guide: false }); //so have time to read stuff
 }
